@@ -128,7 +128,7 @@ export const PROJECTS = [
     id: "temetkezespro",
     title: "Temetkezéspro.com",
     category: ["weboldal", "ai"],
-    thumbnail: "/images/projects/vdlogo.png",
+    thumbnail: "/images/projects/temetpro.png",
     technologies: ["Next.js", "Resend", "AI Assistant"],
     description: "Modern temetkezési szolgáltatás platform AI ügyfélszolgálattal",
     liveUrl: "https://temetkezespro.com",
