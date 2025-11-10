@@ -57,7 +57,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Modern webes és AI megoldások ambiciózus cégeknek
+            Vállalati szintű webfejlesztés és AI integráció, amellyel versenyelőnyre teszel szert a piacon
           </motion.p>
 
           {/* CTA Buttons */}

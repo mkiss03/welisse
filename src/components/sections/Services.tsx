@@ -8,14 +8,14 @@ const services = [
   {
     icon: Code2,
     title: "Webfejlesztés",
-    subtitle: "Villámgyors Élmények",
+    subtitle: "Enterprise-Grade Teljesítmény",
     description:
-      "Modern React/Next.js alkalmazások 95+ PageSpeed pontszámmal. Webes élményeket építünk, amit a felhasználók szeretnek és a keresők jutalmaznak.",
+      "Pixelpontos React/Next.js alkalmazások production-ready kódbázissal és 95+ PageSpeed Score-ral. Olyan digitális élményeket építünk, amelyek konvertálnak, skálázódnak és hosszú távon fenntarthatók.",
     features: [
       "React / Next.js / TypeScript",
       "E-commerce Platformok",
       "Progressive Web Apps (PWA)",
-      "SEO és Teljesítmény",
+      "SEO és Core Web Vitals",
     ],
     gradient: "from-cyan-500 to-blue-600",
     size: "large",
@@ -23,14 +23,14 @@ const services = [
   {
     icon: Boxes,
     title: "Egyedi Szoftver",
-    subtitle: "Skálázható Megoldások",
+    subtitle: "Skálázható Üzleti Megoldások",
     description:
-      "Vállalati szintű CRM, ERP és admin rendszerek az egyedi igényeidre szabva.",
+      "Vállalati szintű CRM, ERP és admin rendszerek, amelyek az üzleti folyamataidhoz igazodnak. Mikroszervíz architektúra, API-first development és modern tech stack.",
     features: [
-      "Egyedi CRM/ERP",
-      "Admin Dashboardok",
-      "API Fejlesztés",
-      "Adatbázis Tervezés",
+      "CRM/ERP Rendszerek",
+      "Admin & Analytics Dashboard",
+      "REST/GraphQL API Fejlesztés",
+      "Adatbázis Architektúra",
     ],
     gradient: "from-purple-500 to-pink-600",
     size: "medium",
@@ -38,14 +38,14 @@ const services = [
   {
     icon: Sparkles,
     title: "AI Integráció",
-    subtitle: "Intelligens Automatizáció",
+    subtitle: "LLM-Powered Automatizáció",
     description:
-      "ChatGPT és Claude alapú megoldások, amik átalakítják a munkád.",
+      "GPT-4 és Claude alapú intelligens megoldások production környezetre optimalizálva. RAG pipeline, egyedi fine-tuning és etikus AI implementáció.",
     features: [
-      "AI Chatbotok",
-      "Dokumentum Feldolgozás",
-      "Email Automatizáció",
-      "Egyedi Modellek",
+      "AI Chatbot & Ügyfélszolgálat",
+      "Dokumentum Feldolgozás (OCR)",
+      "Email & Workflow Automatizáció",
+      "Egyedi LLM Modellek & RAG",
     ],
     gradient: "from-orange-500 to-red-600",
     size: "medium",
@@ -72,7 +72,7 @@ export default function Services() {
             <span className="text-gradient-purple">Építünk</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Full-stack fejlesztés és AI integráció modern technológiákkal
+            Full-stack szoftverfejlesztés és AI integráció production-ready minőségben
           </p>
         </motion.div>
 
@@ -137,12 +137,13 @@ export default function Services() {
                     </div>
 
                     {/* Learn More Link */}
-                    <button
+                    <a
+                      href="#kapcsolat"
                       className={`group/btn flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-transparent hover:bg-gradient-to-r ${service.gradient} hover:bg-clip-text`}
                     >
                       Többet
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </button>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>

@@ -42,7 +42,7 @@ export default function Portfolio() {
             <span className="text-gradient-purple">Projektek</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Valós eredmények, mérhető siker
+            Production-ready alkalmazások, amelyek valós üzleti eredményeket hoznak
           </p>
         </motion.div>
 

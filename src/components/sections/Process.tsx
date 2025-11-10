@@ -35,7 +35,7 @@ export default function Process() {
             <span className="text-gradient-purple">Folyamatunk</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Átlátható, strukturált folyamat az ötlettől a sikeres indulásig
+            Átlátható, agile workflow az ötlettől a production deployment-ig
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Process() {
                               <div
                                 className={`bg-gradient-to-r ${gradient} bg-clip-text text-sm font-medium text-transparent`}
                               >
-                                Step {step.step}
+                                {step.step}. Lépés
                               </div>
                               <h3 className="text-2xl font-bold text-white">
                                 {step.title}

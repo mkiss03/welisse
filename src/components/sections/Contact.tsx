@@ -67,10 +67,10 @@ export default function Contact() {
         >
           <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
             Építsünk Valami{" "}
-            <span className="text-gradient-purple">Csodálatosat</span>
+            <span className="text-gradient-purple">Kivételeset</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Mesélj a projektedről és 24 órán belül visszajelzünk
+            Mesélj a projektedről, és szakértő csapatunk 24 órán belül részletes tervet küld
           </p>
         </motion.div>
 
@@ -84,10 +84,9 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="mb-6 text-2xl font-bold text-white">Lépj Kapcsolatba</h3>
+              <h3 className="mb-6 text-2xl font-bold text-white">Kezdjük El a Közös Munkát</h3>
               <p className="leading-relaxed text-gray-400">
-                Készen állunk válaszolni a kérdéseidre és megbeszélni a következő projekted.
-                Írj nekünk az űrlapon vagy lépj velünk kapcsolatba közvetlenül.
+                Akár innovatív startup, akár növekvő vállalat vagy – csapatunk készen áll, hogy életre keltse digitális víziódat. Ingyenes konzultáción feltérképezzük az igényeidet, és konkrét megoldási javaslattal készülünk.
               </p>
             </div>
 
@@ -200,7 +199,7 @@ export default function Contact() {
                   <select
                     {...register("projectType")}
                     disabled={isSubmitting}
-                    className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>option]:bg-gray-900 [&>option]:text-white"
                   >
                     <option value="">Válassz típust</option>
                     <option value="weboldal">Weboldal</option>
@@ -220,7 +219,7 @@ export default function Contact() {
                   <select
                     {...register("budget")}
                     disabled={isSubmitting}
-                    className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>option]:bg-gray-900 [&>option]:text-white"
                   >
                     <option value="">Válassz költségkeretet</option>
                     <option value="<500k">&lt; 500k Ft</option>
