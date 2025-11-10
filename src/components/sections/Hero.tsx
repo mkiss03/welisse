@@ -29,7 +29,7 @@ export default function Hero() {
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md"
           >
             <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-            <span className="text-sm text-gray-300">Available for projects</span>
+            <span className="text-sm text-gray-300">Elérhető új projektekhez</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -39,14 +39,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-white">Building Digital</span>
+            <span className="text-white">Digitális Élményeket</span>
             <br />
             <span className="text-gradient-purple">
-              Experiences That
+              Építünk, Amik
             </span>
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Actually Work
+              Tényleg Működnek
             </span>
           </motion.h1>
 
@@ -57,7 +57,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Modern web & AI solutions for ambitious companies
+            Modern webes és AI megoldások ambiciózus cégeknek
           </motion.p>
 
           {/* CTA Buttons */}
@@ -71,7 +71,7 @@ export default function Hero() {
               size="lg"
               className="group rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-6 text-lg text-white hover:from-purple-700 hover:to-pink-700"
             >
-              Get Started
+              Kezdjünk Neki
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
 
@@ -80,7 +80,7 @@ export default function Hero() {
               variant="outline"
               className="rounded-full border-white/10 bg-white/5 px-8 py-6 text-lg text-white backdrop-blur-md hover:bg-white/10"
             >
-              View Work
+              Munkáink Megtekintése
               <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
           </motion.div>
@@ -94,7 +94,7 @@ export default function Hero() {
           >
             <div className="mb-6 flex items-center justify-center gap-2 text-sm text-gray-500">
               <Sparkles className="h-4 w-4" />
-              <span>Trusted by 50+ companies</span>
+              <span>50+ cég bizalma</span>
             </div>
 
             {/* Company Logos Placeholder */}

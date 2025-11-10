@@ -66,11 +66,11 @@ export default function Contact() {
           className="mb-16 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
-            Let&apos;s Build Something{" "}
-            <span className="text-gradient-purple">Amazing</span>
+            Építsünk Valami{" "}
+            <span className="text-gradient-purple">Csodálatosat</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Tell us about your project and we&apos;ll get back to you within 24 hours
+            Mesélj a projektedről és 24 órán belül visszajelzünk
           </p>
         </motion.div>
 
@@ -84,10 +84,10 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="mb-6 text-2xl font-bold text-white">Get in Touch</h3>
+              <h3 className="mb-6 text-2xl font-bold text-white">Lépj Kapcsolatba</h3>
               <p className="leading-relaxed text-gray-400">
-                We&apos;re here to answer your questions and discuss your next project.
-                Reach out through the form or contact us directly.
+                Készen állunk válaszolni a kérdéseidre és megbeszélni a következő projekted.
+                Írj nekünk az űrlapon vagy lépj velünk kapcsolatba közvetlenül.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="mb-1 font-medium text-white">Phone</p>
+                  <p className="mb-1 font-medium text-white">Telefon</p>
                   <p className="text-gray-400 transition-colors group-hover:text-cyan-400">
                     +36 XX XXX XXXX
                   </p>
@@ -128,8 +128,8 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="mb-1 font-medium text-white">Location</p>
-                  <p className="text-gray-400">Budapest, Hungary</p>
+                  <p className="mb-1 font-medium text-white">Helyszín</p>
+                  <p className="text-gray-400">Budapest, Magyarország</p>
                 </div>
               </div>
             </div>
@@ -147,11 +147,11 @@ export default function Contact() {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm font-medium text-gray-400">
-                    Name *
+                    Név *
                   </label>
                   <Input
                     {...register("name")}
-                    placeholder="John Doe"
+                    placeholder="Kovács János"
                     disabled={isSubmitting}
                     className="border-white/10 bg-white/5 text-white placeholder:text-gray-600 focus:border-purple-500"
                   />
@@ -167,7 +167,7 @@ export default function Contact() {
                   <Input
                     type="email"
                     {...register("email")}
-                    placeholder="john@example.com"
+                    placeholder="email@pelda.hu"
                     disabled={isSubmitting}
                     className="border-white/10 bg-white/5 text-white placeholder:text-gray-600 focus:border-purple-500"
                   />
@@ -180,7 +180,7 @@ export default function Contact() {
               {/* Phone */}
               <div>
                 <label className="mb-2 block text-sm font-medium text-gray-400">
-                  Phone (optional)
+                  Telefon (opcionális)
                 </label>
                 <Input
                   type="tel"
@@ -195,14 +195,14 @@ export default function Contact() {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm font-medium text-gray-400">
-                    Project Type
+                    Projekt Típusa
                   </label>
                   <select
                     {...register("projectType")}
                     disabled={isSubmitting}
                     className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    <option value="">Select type</option>
+                    <option value="">Válassz típust</option>
                     <option value="weboldal">Weboldal</option>
                     <option value="szoftver">Egyedi Szoftver</option>
                     <option value="ai">AI Integráció</option>
@@ -215,14 +215,14 @@ export default function Contact() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-gray-400">
-                    Budget
+                    Költségkeret
                   </label>
                   <select
                     {...register("budget")}
                     disabled={isSubmitting}
                     className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-600 focus-visible:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    <option value="">Select budget</option>
+                    <option value="">Válassz költségkeretet</option>
                     <option value="<500k">&lt; 500k Ft</option>
                     <option value="500k-1M">500k - 1M Ft</option>
                     <option value="1M-2M">1M - 2M Ft</option>
@@ -238,11 +238,11 @@ export default function Contact() {
               {/* Message */}
               <div>
                 <label className="mb-2 block text-sm font-medium text-gray-400">
-                  Message *
+                  Üzenet *
                 </label>
                 <Textarea
                   {...register("message")}
-                  placeholder="Tell us about your project..."
+                  placeholder="Mesélj a projektedről..."
                   disabled={isSubmitting}
                   rows={6}
                   className="resize-none border-white/10 bg-white/5 text-white placeholder:text-gray-600 focus:border-purple-500"
@@ -262,9 +262,9 @@ export default function Contact() {
                   className="mt-1 h-4 w-4 rounded border-gray-300"
                 />
                 <label htmlFor="gdprAccepted" className="text-sm text-gray-400">
-                  I accept the{" "}
+                  Elfogadom az{" "}
                   <a href="/adatkezeles" className="text-purple-400 hover:underline">
-                    privacy policy
+                    adatkezelési szabályzatot
                   </a>{" "}
                   *
                 </label>
@@ -282,11 +282,11 @@ export default function Contact() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Sending...
+                    Küldés...
                   </>
                 ) : (
                   <>
-                    Send Message
+                    Üzenet Küldése
                     <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </>
                 )}
@@ -297,7 +297,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                   <span className="text-sm font-medium">
-                    Message sent! We&apos;ll get back to you within 24 hours.
+                    Üzenet elküldve! 24 órán belül visszajelzünk.
                   </span>
                 </div>
               )}
@@ -306,7 +306,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400">
                   <XCircle className="h-5 w-5" />
                   <span className="text-sm font-medium">
-                    Something went wrong. Please try again or email us directly.
+                    Valami hiba történt. Kérjük próbáld újra vagy írj nekünk közvetlenül emailben.
                   </span>
                 </div>
               )}

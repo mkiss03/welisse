@@ -173,10 +173,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
           <p className="text-sm text-gray-500">
-            © {currentYear} Welisse. All rights reserved.
+            © {currentYear} Welisse. Minden jog fenntartva.
           </p>
           <p className="text-sm text-gray-500">
-            Made with <span className="text-red-500">♥</span> in Budapest
+            <span className="text-red-500">♥</span>-tal készült Budapesten
           </p>
         </div>
       </div>
