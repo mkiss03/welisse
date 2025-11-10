@@ -2,72 +2,108 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { TESTIMONIALS } from "@/lib/constants";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 export default function Testimonials() {
+  const gradients = [
+    "from-cyan-500 to-blue-600",
+    "from-purple-500 to-pink-600",
+    "from-orange-500 to-red-600",
+  ];
+
   return (
-    <section className="bg-muted/50 py-24">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden bg-[#0A0A0A] py-32">
+      {/* Gradient Orbs */}
+      <div className="absolute left-0 top-0 h-96 w-96 bg-cyan-600/20 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 bg-purple-600/20 blur-3xl" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
+        {/* Section Header */}
         <motion.div
-          className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
         >
-          <Badge className="mb-4">Vélemények</Badge>
-          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Mit Mondanak Ügyfeleink?
+          <h2 className="mb-6 text-5xl font-bold md:text-6xl">
+            <span className="text-white">Client </span>
+            <span className="text-gradient-purple">Testimonials</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            100% ügyfél elégedettség - valós visszajelzések
+          <p className="mx-auto max-w-2xl text-xl text-gray-400">
+            100% client satisfaction - real feedback from real clients
           </p>
         </motion.div>
 
+        {/* Testimonials Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card className="h-full border-2 transition-all hover:border-primary hover:shadow-lg">
-                <CardContent className="p-6">
-                  {/* Rating Stars */}
-                  <div className="mb-4 flex gap-1">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
+          {TESTIMONIALS.map((testimonial, index) => {
+            const gradient = gradients[index % gradients.length];
 
-                  {/* Testimonial Text */}
-                  <p className="mb-6 text-sm text-muted-foreground">
-                    &ldquo;{testimonial.text}&rdquo;
-                  </p>
+            return (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20">
+                  {/* Gradient Glow (Hover Effect) */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-10`}
+                  />
 
-                  {/* Author Info */}
-                  <div className="flex items-center gap-3">
-                    {/* Avatar */}
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-lg font-bold text-white">
-                      {testimonial.name.charAt(0)}
-                    </div>
-
-                    {/* Name & Role */}
-                    <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.role} • {testimonial.company}
+                  <CardContent className="relative z-10 p-0">
+                    {/* Quote Icon */}
+                    <div className="mb-6">
+                      <div
+                        className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient}`}
+                      >
+                        <Quote className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+
+                    {/* Rating Stars */}
+                    <div className="mb-6 flex gap-1">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <p className="mb-8 leading-relaxed text-gray-300">
+                      &ldquo;{testimonial.text}&rdquo;
+                    </p>
+
+                    {/* Author Info */}
+                    <div className="flex items-center gap-4">
+                      {/* Avatar */}
+                      <div
+                        className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${gradient} text-lg font-bold text-white`}
+                      >
+                        {testimonial.name.charAt(0)}
+                      </div>
+
+                      {/* Name & Role */}
+                      <div>
+                        <div className="font-semibold text-white">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          {testimonial.role} • {testimonial.company}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

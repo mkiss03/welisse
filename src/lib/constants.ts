@@ -248,35 +248,35 @@ export const FAQ_ITEMS = [
 
 export const TECH_STACK = {
   frontend: [
-    { name: "React", icon: "⚛️" },
-    { name: "Next.js", icon: "▲" },
-    { name: "Vue.js", icon: "🟢" },
-    { name: "Svelte", icon: "🧡" },
-    { name: "TypeScript", icon: "💙" },
-    { name: "Tailwind CSS", icon: "🎨" },
-    { name: "Framer Motion", icon: "✨" },
+    { name: "React", icon: "SiReact" },
+    { name: "Next.js", icon: "SiNextdotjs" },
+    { name: "Vue.js", icon: "SiVuedotjs" },
+    { name: "Svelte", icon: "SiSvelte" },
+    { name: "TypeScript", icon: "SiTypescript" },
+    { name: "Tailwind CSS", icon: "SiTailwindcss" },
+    { name: "Framer Motion", icon: "SiFramer" },
   ],
   backend: [
-    { name: "Node.js", icon: "🟩" },
-    { name: "Express", icon: "⚡" },
-    { name: "Python", icon: "🐍" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Redis", icon: "🔴" },
+    { name: "Node.js", icon: "SiNodedotjs" },
+    { name: "Express", icon: "SiExpress" },
+    { name: "Python", icon: "SiPython" },
+    { name: "PostgreSQL", icon: "SiPostgresql" },
+    { name: "MongoDB", icon: "SiMongodb" },
+    { name: "Redis", icon: "SiRedis" },
   ],
   ai: [
-    { name: "OpenAI GPT-4", icon: "🤖" },
-    { name: "Claude", icon: "🧠" },
-    { name: "LangChain", icon: "🔗" },
-    { name: "Pinecone", icon: "🌲" },
-    { name: "HuggingFace", icon: "🤗" },
+    { name: "OpenAI GPT-4", icon: "SiOpenai" },
+    { name: "Claude", icon: "SiAnthropic" },
+    { name: "LangChain", icon: "SiChainlink" },
+    { name: "Pinecone", icon: "SiPinecone" },
+    { name: "HuggingFace", icon: "SiHuggingface" },
   ],
   devops: [
-    { name: "Vercel", icon: "▲" },
-    { name: "AWS", icon: "☁️" },
-    { name: "Docker", icon: "🐳" },
-    { name: "GitHub Actions", icon: "🚀" },
-    { name: "Cloudflare", icon: "🔶" },
+    { name: "Vercel", icon: "SiVercel" },
+    { name: "AWS", icon: "SiAmazonaws" },
+    { name: "Docker", icon: "SiDocker" },
+    { name: "GitHub Actions", icon: "SiGithubactions" },
+    { name: "Cloudflare", icon: "SiCloudflare" },
   ],
 };
 
@@ -284,7 +284,6 @@ export const PRICING_TIERS = [
   {
     id: "starter",
     name: "Starter",
-    icon: "💼",
     price: "300.000 Ft-tól",
     description: "Kisvállalkozásoknak, freelancereknek",
     features: [
@@ -302,7 +301,6 @@ export const PRICING_TIERS = [
   {
     id: "professional",
     name: "Professional",
-    icon: "⭐",
     price: "800.000 Ft-tól",
     description: "Növekvő cégeknek, online boltoknak",
     features: [
@@ -321,7 +319,6 @@ export const PRICING_TIERS = [
   {
     id: "enterprise",
     name: "Enterprise",
-    icon: "🚀",
     price: "Egyedi Árazás",
     description: "Nagyvállalatok, komplex projektekhez",
     features: [
@@ -340,17 +337,16 @@ export const PRICING_TIERS = [
 ];
 
 export const STATS = [
-  { label: "Elkészült Projekt", value: 50, icon: "📊", suffix: "+" },
-  { label: "Avg PageSpeed", value: 95, icon: "⚡", suffix: "+" },
-  { label: "Elégedett Ügyfél", value: 100, icon: "🏆", suffix: "%" },
-  { label: "Órás Support", value: 24, icon: "⏱️", suffix: "" },
+  { label: "Elkészült Projekt", value: 50, suffix: "+" },
+  { label: "Avg PageSpeed", value: 95, suffix: "+" },
+  { label: "Elégedett Ügyfél", value: 100, suffix: "%" },
+  { label: "Órás Support", value: 24, suffix: "/7" },
 ];
 
 export const PROCESS_STEPS = [
   {
     step: 1,
     title: "Discovery",
-    icon: "🔍",
     description: [
       "Ingyenes konzultáció",
       "Igények felmérése",
@@ -361,7 +357,6 @@ export const PROCESS_STEPS = [
   {
     step: 2,
     title: "Design",
-    icon: "🎨",
     description: [
       "Wireframe & mockup",
       "UI/UX tervezés",
@@ -372,7 +367,6 @@ export const PROCESS_STEPS = [
   {
     step: 3,
     title: "Development",
-    icon: "💻",
     description: [
       "Agile sprints (2 hét)",
       "Weekly update calls",
@@ -383,7 +377,6 @@ export const PROCESS_STEPS = [
   {
     step: 4,
     title: "Testing",
-    icon: "🧪",
     description: [
       "Automated tests",
       "Manual QA",
@@ -394,7 +387,6 @@ export const PROCESS_STEPS = [
   {
     step: 5,
     title: "Launch",
-    icon: "🚀",
     description: [
       "Production deployment",
       "DNS & domain setup",
@@ -405,7 +397,6 @@ export const PROCESS_STEPS = [
   {
     step: 6,
     title: "Support",
-    icon: "🛠️",
     description: [
       "3 hónap ingyenes support",
       "Monitoring & maintenance",

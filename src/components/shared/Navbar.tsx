@@ -29,13 +29,16 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 shadow-md backdrop-blur-md dark:bg-gray-900/90"
+          ? "border-b border-white/10 bg-[#0A0A0A]/80 shadow-lg backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-primary">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-white transition-all hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text"
+        >
           Welisse
         </Link>
 
@@ -45,20 +48,24 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium text-gray-300 transition-colors hover:text-white"
             >
               {item.label}
             </Link>
           ))}
-          <Button size="lg" className="gradient-primary">
-             Ingyenes Konzultáció
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 text-white transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-lg"
+          >
+            <a href="#kapcsolat">Ingyenes Konzultáció</a>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden"
+          className="rounded-lg border border-white/10 bg-white/5 p-2 text-white transition-colors hover:bg-white/10 md:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -67,20 +74,24 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="border-t bg-white dark:bg-gray-900 md:hidden">
-          <div className="container mx-auto flex flex-col gap-4 px-4 py-6">
+        <div className="border-t border-white/10 bg-[#0A0A0A]/95 backdrop-blur-xl md:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-gray-300 transition-colors hover:border-purple-500/50 hover:bg-white/10 hover:text-white"
               >
                 {item.label}
               </Link>
             ))}
-            <Button size="lg" className="gradient-primary w-full">
-               Ingyenes Konzultáció
+            <Button
+              asChild
+              size="lg"
+              className="w-full rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-white transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-lg"
+            >
+              <a href="#kapcsolat">Ingyenes Konzultáció</a>
             </Button>
           </div>
         </div>

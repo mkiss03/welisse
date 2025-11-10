@@ -1,86 +1,147 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { SERVICES } from "@/lib/constants";
-import { Globe, Code, Brain, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Code2, Sparkles, Boxes, ArrowRight } from "lucide-react";
 
-const iconMap = {
-  Globe: Globe,
-  Code: Code,
-  Brain: Brain,
-};
+const services = [
+  {
+    icon: Code2,
+    title: "Web Development",
+    subtitle: "Blazing Fast Experiences",
+    description:
+      "Modern React/Next.js applications with 95+ PageSpeed scores. We build web experiences that users love and search engines reward.",
+    features: [
+      "React / Next.js / TypeScript",
+      "E-commerce Platforms",
+      "Progressive Web Apps",
+      "SEO & Performance",
+    ],
+    gradient: "from-cyan-500 to-blue-600",
+    size: "large",
+  },
+  {
+    icon: Boxes,
+    title: "Custom Software",
+    subtitle: "Scalable Solutions",
+    description:
+      "Enterprise-grade CRM, ERP, and admin systems built for your specific needs.",
+    features: [
+      "Custom CRM/ERP",
+      "Admin Dashboards",
+      "API Development",
+      "Database Design",
+    ],
+    gradient: "from-purple-500 to-pink-600",
+    size: "medium",
+  },
+  {
+    icon: Sparkles,
+    title: "AI Integration",
+    subtitle: "Intelligent Automation",
+    description:
+      "ChatGPT and Claude-powered solutions that transform how you work.",
+    features: [
+      "AI Chatbots",
+      "Document Processing",
+      "Email Automation",
+      "Custom Models",
+    ],
+    gradient: "from-orange-500 to-red-600",
+    size: "medium",
+  },
+];
 
 export default function Services() {
   return (
-    <section id="szolgaltatasok" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="szolgaltatasok" className="relative overflow-hidden bg-[#0A0A0A] py-32">
+      {/* Grid Background */}
+      <div className="grid-background absolute inset-0 opacity-30" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
+        {/* Section Header */}
         <motion.div
-          className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
         >
-          <Badge className="mb-4">Szolgáltatások</Badge>
-          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Mit Kínálunk?
+          <h2 className="mb-6 text-5xl font-bold md:text-6xl">
+            <span className="text-white">What We </span>
+            <span className="text-gradient-purple">Build</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Teljes körű webfejlesztési és AI integrációs szolgáltatások modern
-            technológiákkal
+          <p className="mx-auto max-w-2xl text-xl text-gray-400">
+            Full-stack development and AI integration services with modern
+            technologies
           </p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {SERVICES.map((service, index) => {
-            const Icon = iconMap[service.icon as keyof typeof iconMap];
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {services.map((service, index) => {
+            const Icon = service.icon;
 
             return (
               <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                style={{ perspective: 1000 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`${service.size === "large" ? "md:col-span-2" : ""}`}
               >
-                <Card className="group h-full cursor-pointer border-2 transition-all hover:border-primary hover:shadow-xl">
-                  <CardHeader>
-                    <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-8 w-8 text-primary" />
+                <Card
+                  className={`group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20`}
+                >
+                  {/* Gradient Glow (Hover Effect) */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100`}
+                  />
+
+                  <CardContent className="relative z-10 p-0">
+                    {/* Icon */}
+                    <div
+                      className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} transition-transform duration-300 group-hover:scale-110`}
+                    >
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="mb-2 text-2xl">
-                      {service.title} {service.icon === "Globe" && ""}
-                      {service.icon === "Code" && ""}
-                      {service.icon === "Brain" && ""}
-                    </CardTitle>
-                    <p className="text-sm font-medium text-primary">
+
+                    {/* Title */}
+                    <h3 className="mb-2 text-3xl font-bold text-white">
+                      {service.title}
+                    </h3>
+                    <p
+                      className={`mb-4 bg-gradient-to-r ${service.gradient} bg-clip-text text-sm font-medium text-transparent`}
+                    >
                       {service.subtitle}
                     </p>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="mb-6 space-y-2">
-                      {service.description.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm">
-                          <span className="mt-1 text-primary">✓</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
 
-                    <div className="mb-4 flex flex-wrap gap-2">
-                      {service.techStack.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
+                    {/* Description */}
+                    <p className="mb-6 leading-relaxed text-gray-400">
+                      {service.description}
+                    </p>
+
+                    {/* Features Grid */}
+                    <div className="mb-6 grid grid-cols-2 gap-3">
+                      {service.features.map((feature) => (
+                        <div
+                          key={feature}
+                          className="flex items-center gap-2 text-sm text-gray-300"
+                        >
+                          <div
+                            className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${service.gradient}`}
+                          />
+                          {feature}
+                        </div>
                       ))}
                     </div>
 
-                    <button className="group/btn flex items-center gap-2 text-sm font-medium text-primary">
-                      Tudj meg többet
+                    {/* Learn More Link */}
+                    <button
+                      className={`group/btn flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-transparent hover:bg-gradient-to-r ${service.gradient} hover:bg-clip-text`}
+                    >
+                      Learn More
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </button>
                   </CardContent>
