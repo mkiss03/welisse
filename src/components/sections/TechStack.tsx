@@ -28,11 +28,11 @@ export default function TechStack() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Tech </span>
+            <span className="text-white">Technológiai </span>
             <span className="text-gradient-purple">Stack</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            The most modern and reliable technologies
+            A legmodernebb és legmegbízhatóbb technológiák
           </p>
         </motion.div>
 

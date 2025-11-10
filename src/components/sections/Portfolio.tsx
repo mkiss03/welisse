@@ -38,11 +38,11 @@ export default function Portfolio() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Featured </span>
-            <span className="text-gradient-purple">Projects</span>
+            <span className="text-white">Kiemelt </span>
+            <span className="text-gradient-purple">Projektek</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Real results, measurable success
+            Valós eredmények, mérhető siker
           </p>
         </motion.div>
 
@@ -114,7 +114,7 @@ export default function Portfolio() {
                           {project.featured && (
                             <div className="absolute right-6 top-6">
                               <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                                Featured
+                                Kiemelt
                               </Badge>
                             </div>
                           )}
@@ -211,7 +211,7 @@ export default function Portfolio() {
                             className="group/btn inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-medium text-white transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-lg"
                           >
                             <ExternalLink className="h-4 w-4" />
-                            Visit Website
+                            Weboldal Megtekintése
                             <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                           </a>
                         )}
@@ -223,7 +223,7 @@ export default function Portfolio() {
                             className="group/btn inline-flex items-center gap-2 rounded-full border-2 border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition-all hover:border-cyan-500/50 hover:bg-white/10"
                           >
                             <Play className="h-4 w-4" />
-                            Try Demo
+                            Demó Kipróbálása
                           </a>
                         )}
                       </div>

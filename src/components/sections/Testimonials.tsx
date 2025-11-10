@@ -28,11 +28,11 @@ export default function Testimonials() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Client </span>
-            <span className="text-gradient-purple">Testimonials</span>
+            <span className="text-white">Ügyfeleink </span>
+            <span className="text-gradient-purple">Véleménye</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            100% client satisfaction - real feedback from real clients
+            100% ügyfél elégedettség - valós visszajelzések
           </p>
         </motion.div>
 

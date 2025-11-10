@@ -26,11 +26,11 @@ export default function FAQ() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Frequently Asked </span>
-            <span className="text-gradient-purple">Questions</span>
+            <span className="text-white">Gyakran Ismételt </span>
+            <span className="text-gradient-purple">Kérdések</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Everything you need to know about projects and collaboration
+            Minden, amit tudnod kell a projektekről és az együttműködésről
           </p>
         </motion.div>
 
@@ -76,12 +76,12 @@ export default function FAQ() {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-400">
-            Still have questions?{" "}
+            Még mindig vannak kérdéseid?{" "}
             <a
               href="#kapcsolat"
               className="font-medium text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text hover:from-purple-300 hover:to-pink-300"
             >
-              Get in touch with us!
+              Lépj kapcsolatba velünk!
             </a>
           </p>
         </motion.div>

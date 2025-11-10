@@ -32,11 +32,11 @@ export default function Pricing() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Transparent </span>
-            <span className="text-gradient-purple">Pricing</span>
+            <span className="text-white">Átlátható </span>
+            <span className="text-gradient-purple">Árazás</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Choose the package that fits your needs
+            Válaszd ki a hozzád illő csomagot
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export default function Pricing() {
                   <div className="absolute -top-5 left-1/2 z-20 -translate-x-1/2">
                     <div className="flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1.5 text-sm font-medium text-white shadow-lg">
                       <Sparkles className="h-4 w-4" />
-                      MOST POPULAR
+                      LEGNÉPSZERŰBB
                     </div>
                   </div>
                 )}
@@ -139,12 +139,12 @@ export default function Pricing() {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-400">
-            Can&apos;t find the right package?{" "}
+            Nem találod a megfelelő csomagot?{" "}
             <a
               href="#kapcsolat"
               className="font-medium text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text hover:from-purple-300 hover:to-pink-300"
             >
-              Request a custom quote!
+              Kérj egyedi ajánlatot!
             </a>
           </p>
         </motion.div>

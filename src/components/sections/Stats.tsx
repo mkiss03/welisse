@@ -56,8 +56,8 @@ export default function Stats() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-5xl font-bold md:text-6xl">
-            <span className="text-white">Proven </span>
-            <span className="text-gradient-purple">Results</span>
+            <span className="text-white">Bizonyított </span>
+            <span className="text-gradient-purple">Eredmények</span>
           </h2>
         </motion.div>
 

@@ -25,11 +25,11 @@ export default function CTA() {
           {/* Content */}
           <div className="relative z-10 text-center">
             <h2 className="mb-6 text-4xl font-bold md:text-6xl">
-              <span className="text-white">Ready to Get </span>
-              <span className="text-gradient-purple">Started?</span>
+              <span className="text-white">Készen Állsz </span>
+              <span className="text-gradient-purple">az Indulásra?</span>
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-xl text-gray-300">
-              Let&apos;s discuss your project in a free consultation
+              Beszéljük meg a projektedet egy ingyenes konzultáción
             </p>
 
             {/* CTA Buttons */}
@@ -40,7 +40,7 @@ export default function CTA() {
               >
                 <a href="#kapcsolat">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Book Free Consultation
+                  Ingyenes Konzultáció Foglalása
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                 </a>
               </Button>
@@ -51,7 +51,7 @@ export default function CTA() {
               >
                 <a href="mailto:info@welisse.hu">
                   <Mail className="mr-2 h-5 w-5" />
-                  Send Email
+                  Email Küldése
                 </a>
               </Button>
             </div>
@@ -67,7 +67,7 @@ export default function CTA() {
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-orange-600">
                 <Zap className="h-4 w-4 text-white" />
               </div>
-              <span>We typically respond within 24 hours</span>
+              <span>Általában 24 órán belül válaszolunk</span>
             </motion.div>
           </div>
         </motion.div>
