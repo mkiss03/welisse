@@ -53,9 +53,9 @@ export default function Services() {
                       <Icon className="h-8 w-8 text-primary" />
                     </div>
                     <CardTitle className="mb-2 text-2xl">
-                      {service.title} {service.icon === "Globe" && "🌐"}
-                      {service.icon === "Code" && "💻"}
-                      {service.icon === "Brain" && "🤖"}
+                      {service.title} {service.icon === "Globe" && ""}
+                      {service.icon === "Code" && ""}
+                      {service.icon === "Brain" && ""}
                     </CardTitle>
                     <p className="text-sm font-medium text-primary">
                       {service.subtitle}

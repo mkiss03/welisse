@@ -51,7 +51,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Button size="lg" className="gradient-primary">
-            📅 Ingyenes Konzultáció
+             Ingyenes Konzultáció
           </Button>
         </div>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Button size="lg" className="gradient-primary w-full">
-              📅 Ingyenes Konzultáció
+               Ingyenes Konzultáció
             </Button>
           </div>
         </div>

@@ -2,73 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Zap, Award, Lock, Clock } from "lucide-react";
+import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
-      {/* Animated Gradient Background */}
-      <div className="animate-gradient gradient-primary absolute inset-0 opacity-20" />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0A0A0A] pt-20">
+      {/* Gradient Orbs */}
+      <div className="absolute left-1/4 top-0 h-96 w-96 bg-purple-600/20 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-pink-600/20 blur-3xl" />
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute left-[10%] top-[20%] text-6xl opacity-20"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          ⚛️
-        </motion.div>
-        <motion.div
-          className="absolute right-[15%] top-[30%] text-5xl opacity-20"
-          animate={{
-            y: [0, 20, 0],
-            rotate: [0, -10, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          🤖
-        </motion.div>
-        <motion.div
-          className="absolute bottom-[20%] left-[20%] text-4xl opacity-20"
-          animate={{
-            y: [0, -15, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          💻
-        </motion.div>
-        <motion.div
-          className="absolute bottom-[30%] right-[10%] text-5xl opacity-20"
-          animate={{
-            y: [0, 15, 0],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          ⚡
-        </motion.div>
-      </div>
+      {/* Grid Background */}
+      <div className="grid-background absolute inset-0 opacity-50" />
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 text-center">
@@ -77,70 +21,90 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary/20">
-            🚀 Trusted by 50+ Companies
-          </Badge>
-
-          <motion.h1
-            className="mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl"
+          {/* Badge */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md"
           >
-            Egyedi Web & AI
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+            <span className="text-sm text-gray-300">Available for projects</span>
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            className="mb-6 text-6xl font-bold leading-none md:text-7xl lg:text-8xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <span className="text-white">Building Digital</span>
             <br />
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Megoldások a Jövőnek
+            <span className="text-gradient-purple">
+              Experiences That
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Actually Work
             </span>
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.p
-            className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
+            className="mx-auto mb-12 max-w-3xl text-xl text-gray-400 md:text-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Digitalizáljuk vállalkozásod modern technológiákkal - gyorsabban,
-            biztonságosabban, skálázhatóan.
+            Modern web & AI solutions for ambitious companies
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button size="xl" className="gradient-primary group">
-              📅 Ingyenes Konzultáció
-              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+            <Button
+              size="lg"
+              className="group rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-6 text-lg text-white hover:from-purple-700 hover:to-pink-700"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button size="xl" variant="outline">
-              💼 Portfolio
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full border-white/10 bg-white/5 px-8 py-6 text-lg text-white backdrop-blur-md hover:bg-white/10"
+            >
+              View Work
+              <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
           </motion.div>
 
-          {/* Trust Badges */}
+          {/* Trust Indicator */}
           <motion.div
-            className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="mt-16"
           >
-            <div className="flex flex-col items-center gap-2">
-              <Zap className="h-8 w-8 text-primary" />
-              <p className="text-sm font-medium">95+ PageSpeed</p>
+            <div className="mb-6 flex items-center justify-center gap-2 text-sm text-gray-500">
+              <Sparkles className="h-4 w-4" />
+              <span>Trusted by 50+ companies</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <Award className="h-8 w-8 text-primary" />
-              <p className="text-sm font-medium">100% Elégedettség</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Lock className="h-8 w-8 text-primary" />
-              <p className="text-sm font-medium">Enterprise Biztonság</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Clock className="h-8 w-8 text-primary" />
-              <p className="text-sm font-medium">24/7 Support</p>
+
+            {/* Company Logos Placeholder */}
+            <div className="flex flex-wrap items-center justify-center gap-8 opacity-50">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div
+                  key={i}
+                  className="h-12 w-24 rounded-lg border border-white/10 bg-white/5"
+                />
+              ))}
             </div>
           </motion.div>
         </motion.div>
@@ -148,17 +112,12 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2"
       >
-        <div className="h-12 w-8 rounded-full border-2 border-primary p-2">
-          <motion.div
-            className="h-2 w-2 rounded-full bg-primary"
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
+        <ArrowDown className="h-6 w-6 text-white/50" />
       </motion.div>
     </section>
   );

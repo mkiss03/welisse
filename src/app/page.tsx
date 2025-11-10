@@ -8,12 +8,13 @@ import Pricing from "@/components/sections/Pricing";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/shared/Navbar";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0A0A0A]">
       <Navbar />
       <Hero />
       <Services />
@@ -25,6 +26,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <CTA />
+      <Contact />
       <Footer />
     </main>
   );

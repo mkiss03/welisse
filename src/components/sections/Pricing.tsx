@@ -104,7 +104,7 @@ export default function Pricing() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="text-muted-foreground">
-            💡 Nem találod a megfelelő csomagot?{" "}
+             Nem találod a megfelelő csomagot?{" "}
             <a href="#kapcsolat" className="font-medium text-primary hover:underline">
               Kérj egyedi ajánlatot!
             </a>

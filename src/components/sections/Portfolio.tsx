@@ -80,7 +80,7 @@ export default function Portfolio() {
                     {project.id === "temetkezespro" && "🕊️"}
                   </div>
                   {project.featured && (
-                    <Badge className="absolute right-4 top-4">⭐ Featured</Badge>
+                    <Badge className="absolute right-4 top-4"> Featured</Badge>
                   )}
                 </div>
 
