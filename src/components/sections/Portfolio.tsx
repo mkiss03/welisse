@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PROJECTS } from "@/lib/constants";
 import { ExternalLink, Play, ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
@@ -105,20 +106,21 @@ export default function Portfolio() {
                       />
 
                       {/* Project Thumbnail */}
-                      <div className="relative aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8">
-                        <div className="flex h-full items-center justify-center">
-                          {/* Placeholder for actual project image */}
-                          <div
-                            className={`h-full w-full rounded-xl bg-gradient-to-br ${gradient} opacity-20`}
-                          />
-                          {project.featured && (
-                            <div className="absolute right-6 top-6">
-                              <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                                Kiemelt
-                              </Badge>
-                            </div>
-                          )}
-                        </div>
+                      <div className="relative aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900">
+                        <Image
+                          src={project.thumbnail}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                        />
+                        {project.featured && (
+                          <div className="absolute right-6 top-6 z-10">
+                            <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg">
+                              Kiemelt
+                            </Badge>
+                          </div>
+                        )}
                       </div>
                     </Card>
                   </div>
