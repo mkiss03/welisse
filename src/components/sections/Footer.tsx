@@ -10,13 +10,12 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#0A0A0A] py-12">
       <div className="mx-auto max-w-7xl px-4">
         {/* Main Footer Content */}
-        <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
+        <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <h3 className="mb-4 text-3xl font-bold text-white">Welisse</h3>
-            <p className="mb-6 max-w-sm text-gray-400">
-              Modern web & AI solutions for ambitious companies. Building digital
-              experiences that actually work.
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-gray-400 sm:text-base">
+              Vállalati szintű web és AI megoldások növekvő cégeknek. Digitális élményeket építünk, amelyek mérhető eredményeket hoznak.
             </p>
             <div className="flex gap-4">
               <a
@@ -48,14 +47,14 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 font-semibold text-white">Services</h4>
+            <h4 className="mb-4 text-base font-semibold text-white sm:text-lg">Szolgáltatások</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="#szolgaltatasok"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Web Development
+                  Webfejlesztés
                 </Link>
               </li>
               <li>
@@ -63,7 +62,7 @@ export default function Footer() {
                   href="#szolgaltatasok"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Custom Software
+                  Egyedi Szoftver
                 </Link>
               </li>
               <li>
@@ -71,7 +70,7 @@ export default function Footer() {
                   href="#szolgaltatasok"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  AI Integration
+                  AI Integráció
                 </Link>
               </li>
               <li>
@@ -79,7 +78,7 @@ export default function Footer() {
                   href="#arazas"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Pricing
+                  Árazás
                 </Link>
               </li>
             </ul>
@@ -87,14 +86,14 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="mb-4 font-semibold text-white">Company</h4>
+            <h4 className="mb-4 text-base font-semibold text-white sm:text-lg">Cég</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="#portfolio"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Portfolio
+                  Portfólió
                 </Link>
               </li>
               <li>
@@ -102,7 +101,7 @@ export default function Footer() {
                   href="#kapcsolat"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Contact
+                  Kapcsolat
                 </Link>
               </li>
               <li>
@@ -110,7 +109,7 @@ export default function Footer() {
                   href="/adatkezeles"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Privacy Policy
+                  Adatkezelés
                 </Link>
               </li>
               <li>
@@ -118,7 +117,7 @@ export default function Footer() {
                   href="/aszf"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Terms of Service
+                  ÁSZF
                 </Link>
               </li>
             </ul>
@@ -126,17 +125,17 @@ export default function Footer() {
         </div>
 
         {/* Contact Info Bar */}
-        <div className="mb-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mb-8 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600">
                 <Mail className="h-5 w-5 text-white" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-gray-500">Email</p>
                 <a
                   href="mailto:info@welisse.hu"
-                  className="text-sm font-medium text-white hover:text-purple-400"
+                  className="block truncate text-sm font-medium text-white hover:text-purple-400"
                 >
                   info@welisse.hu
                 </a>
@@ -144,11 +143,11 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-600 to-blue-600">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-600 to-blue-600">
                 <Phone className="h-5 w-5 text-white" />
               </div>
-              <div>
-                <p className="text-xs text-gray-500">Phone</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs text-gray-500">Telefon</p>
                 <a
                   href="tel:+36XXXXXXXXX"
                   className="text-sm font-medium text-white hover:text-cyan-400"
@@ -158,20 +157,20 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-orange-600 to-red-600">
+            <div className="flex items-center gap-3 sm:col-span-2 lg:col-span-1">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-600 to-red-600">
                 <Clock className="h-5 w-5 text-white" />
               </div>
-              <div>
-                <p className="text-xs text-gray-500">Availability</p>
-                <p className="text-sm font-medium text-white">Mon-Fri: 9:00 - 18:00</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs text-gray-500">Elérhetőség</p>
+                <p className="text-sm font-medium text-white">Hétfő-Péntek: 9:00 - 18:00</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row md:text-left">
           <p className="text-sm text-gray-500">
             © {currentYear} Welisse. Minden jog fenntartva.
           </p>

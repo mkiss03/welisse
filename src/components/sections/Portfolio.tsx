@@ -37,11 +37,11 @@ export default function Portfolio() {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
-          <h2 className="mb-6 text-5xl font-bold md:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
             <span className="text-white">Kiemelt </span>
             <span className="text-gradient-purple">Projektek</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-gray-400">
+          <p className="mx-auto max-w-2xl px-4 text-lg text-gray-400 sm:text-xl">
             Production-ready alkalmazások, amelyek valós üzleti eredményeket hoznak
           </p>
         </motion.div>

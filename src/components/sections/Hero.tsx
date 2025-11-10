@@ -34,7 +34,7 @@ export default function Hero() {
 
           {/* Main Heading */}
           <motion.h1
-            className="mb-6 text-6xl font-bold leading-none md:text-7xl lg:text-8xl"
+            className="mb-6 text-5xl font-bold leading-none sm:text-6xl md:text-7xl lg:text-8xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -52,7 +52,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            className="mx-auto mb-12 max-w-3xl text-xl text-gray-400 md:text-2xl"
+            className="mx-auto mb-12 max-w-3xl px-4 text-lg text-gray-400 sm:text-xl md:text-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

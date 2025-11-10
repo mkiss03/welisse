@@ -65,11 +65,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
             Építsünk Valami{" "}
             <span className="text-gradient-purple">Kivételeset</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-gray-400">
+          <p className="mx-auto max-w-2xl px-4 text-lg text-gray-400 sm:text-xl">
             Mesélj a projektedről, és szakértő csapatunk 24 órán belül részletes tervet küld
           </p>
         </motion.div>
