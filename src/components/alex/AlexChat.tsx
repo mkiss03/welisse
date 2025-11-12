@@ -7,6 +7,17 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import AlexVoice, { AlexVoiceRef } from './AlexVoice';
+import dynamic from 'next/dynamic';
+
+// Dynamically import 3D canvas (SSR disabled)
+const AlexCanvas3D = dynamic(() => import('./AlexCanvas3D'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[500px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-purple-900/20 to-transparent">
+      <div className="text-center text-white/50">Loading 3D...</div>
+    </div>
+  ),
+});
 
 interface Message {
   id: string;
@@ -16,6 +27,61 @@ interface Message {
 }
 
 type AnimationType = 'idle' | 'talking' | 'waving' | 'pointing' | 'thinking';
+
+// Simple 2D Avatar Component (Fallback)
+function SimpleAvatar({
+  isSpeaking,
+  animation,
+}: {
+  isSpeaking: boolean;
+  animation: AnimationType;
+}) {
+  const getEmoji = () => {
+    if (isSpeaking) return '🗣️';
+    if (animation === 'waving') return '👋';
+    if (animation === 'thinking') return '🤔';
+    if (animation === 'pointing') return '👉';
+    return '👨‍💻';
+  };
+
+  const getStatus = () => {
+    if (isSpeaking) return 'Beszélek...';
+    if (animation === 'thinking') return 'Gondolkodom...';
+    return 'AI Asszisztens';
+  };
+
+  return (
+    <div className="flex h-[500px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-purple-900/20 to-transparent">
+      <div className="text-center">
+        <motion.div
+          className="mb-4 text-9xl"
+          animate={{
+            scale: isSpeaking ? [1, 1.1, 1] : 1,
+            rotate: animation === 'waving' ? [0, 10, -10, 10, 0] : 0,
+          }}
+          transition={{
+            duration: animation === 'waving' ? 1.5 : 0.5,
+            repeat: isSpeaking ? Infinity : 0,
+          }}
+        >
+          {getEmoji()}
+        </motion.div>
+        <h3 className="mb-2 text-3xl font-bold text-white">Alex</h3>
+        <p className="text-lg text-gray-400">{getStatus()}</p>
+
+        {/* Status indicator */}
+        <div className="mt-4 flex items-center justify-center gap-2">
+          <div
+            className={`h-3 w-3 rounded-full ${
+              isSpeaking ? 'animate-pulse bg-green-500' : 'bg-purple-500'
+            }`}
+          />
+          <span className="text-sm text-gray-500">2D Mode</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function AlexChat() {
   const [messages, setMessages] = useState<Message[]>([
@@ -31,6 +97,7 @@ export default function AlexChat() {
   const [animation, setAnimation] = useState<AnimationType>('waving');
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [use3D, setUse3D] = useState(false); // Toggle 2D/3D mode
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const alexVoiceRef = useRef<AlexVoiceRef>(null);
@@ -158,57 +225,34 @@ export default function AlexChat() {
     'Mutasd a portfóliót',
   ];
 
-  // Get avatar emoji based on state
-  const getAvatarEmoji = () => {
-    if (isListening) return '👂';
-    if (isSpeaking) return '🗣️';
-    if (animation === 'waving') return '👋';
-    if (animation === 'thinking') return '🤔';
-    if (animation === 'pointing') return '👉';
-    return '👨‍💻';
-  };
-
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      {/* Avatar Display (2D Version) */}
+      {/* Avatar Display - 3D/2D Toggle */}
       <div className="relative">
-        <div className="flex h-[500px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-purple-900/20 to-transparent">
-          <div className="text-center">
-            <motion.div
-              className="mb-4 text-9xl"
-              animate={{
-                scale: isSpeaking ? [1, 1.1, 1] : 1,
-                rotate: animation === 'waving' ? [0, 10, -10, 10, 0] : 0,
-              }}
-              transition={{
-                duration: animation === 'waving' ? 1.5 : 0.5,
-                repeat: isSpeaking ? Infinity : 0,
-              }}
-            >
-              {getAvatarEmoji()}
-            </motion.div>
-            <p className="text-2xl font-bold text-white">Alex</p>
-            <p className="mt-2 text-sm text-gray-400">AI Asszisztens • Welisse</p>
-          </div>
-        </div>
+        {use3D ? (
+          <AlexCanvas3D animation={animation} isSpeaking={isSpeaking} />
+        ) : (
+          <SimpleAvatar animation={animation} isSpeaking={isSpeaking} />
+        )}
 
-        {/* Status Badge */}
-        <div className="absolute left-4 top-4">
-          <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-md">
-            <div
-              className={`h-2 w-2 rounded-full ${
-                isListening
-                  ? 'bg-red-500 animate-pulse'
-                  : isSpeaking
-                    ? 'bg-green-500 animate-pulse'
-                    : 'bg-purple-500'
-              }`}
-            />
-            <span className="text-sm text-white">
-              {isListening ? 'Hallgatlak...' : isSpeaking ? 'Beszélek...' : 'Online'}
-            </span>
+        {/* Listening Status Badge (overlay for 2D, integrated in 3D) */}
+        {!use3D && isListening && (
+          <div className="absolute left-4 top-4">
+            <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-md">
+              <div className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+              <span className="text-sm text-white">Hallgatlak...</span>
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* 2D/3D Toggle Button */}
+        <button
+          onClick={() => setUse3D(!use3D)}
+          className="absolute bottom-4 right-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md transition-all hover:bg-white/20"
+          title={use3D ? 'Switch to 2D Mode' : 'Switch to 3D Mode'}
+        >
+          {use3D ? '📱 2D Mode' : '🎮 3D Mode'}
+        </button>
       </div>
 
       {/* Chat Interface */}
