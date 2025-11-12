@@ -35,6 +35,21 @@ export default function AlexChat() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const alexVoiceRef = useRef<AlexVoiceRef>(null);
 
+  // Health check on mount (development only)
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      fetch('/api/chat')
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('🔍 API Health Check:', data);
+          if (!data.hasApiKey) {
+            console.warn('⚠️ OPENAI_API_KEY is not set!');
+          }
+        })
+        .catch((err) => console.error('❌ Health check failed:', err));
+    }
+  }, []);
+
   // Auto-scroll
   useEffect(() => {
     if (scrollRef.current) {
@@ -68,6 +83,8 @@ export default function AlexChat() {
     setAnimation('thinking');
 
     try {
+      console.log('📤 Sending message to API...');
+
       // Call OpenAI API
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -80,11 +97,21 @@ export default function AlexChat() {
         }),
       });
 
+      console.log('📥 Response status:', response.status);
+
       if (!response.ok) {
-        throw new Error('API request failed');
+        const errorData = await response.json();
+        console.error('❌ API Error:', errorData);
+        throw new Error(errorData.details || errorData.error || 'API request failed');
       }
 
       const data = await response.json();
+
+      if (!data.message) {
+        throw new Error('No message in response');
+      }
+
+      console.log('✅ Response received');
 
       // Add assistant message
       const assistantMessage: Message = {
@@ -102,14 +129,14 @@ export default function AlexChat() {
         setIsSpeaking(false);
         setAnimation('idle');
       });
-    } catch (error) {
-      console.error('Chat error:', error);
+    } catch (error: any) {
+      console.error('❌ Chat error:', error);
 
-      // Error message
+      // Show detailed error message to user
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: 'Elnézést, valami hiba történt. Próbáld újra!',
+        content: `Sajnálom, hiba történt: ${error.message}\n\nKérlek próbáld újra, vagy írj nekünk: info@welisse.hu`,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);

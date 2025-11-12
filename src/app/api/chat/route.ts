@@ -46,14 +46,30 @@ export async function POST(req: NextRequest) {
     // Initialize OpenAI client at runtime
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
+      console.error('❌ OPENAI_API_KEY is not set!');
       return NextResponse.json(
-        { error: 'OpenAI API key not configured' },
+        {
+          error: 'OpenAI API key not configured',
+          details: 'Please set OPENAI_API_KEY environment variable'
+        },
         { status: 500 }
       );
     }
 
     const openai = new OpenAI({ apiKey });
-    const { messages } = await req.json();
+
+    // Parse request body
+    const body = await req.json();
+    const { messages } = body;
+
+    if (!messages || !Array.isArray(messages)) {
+      return NextResponse.json(
+        { error: 'Invalid request format' },
+        { status: 400 }
+      );
+    }
+
+    console.log('📤 Calling OpenAI with', messages.length, 'messages');
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4-turbo-preview',
@@ -68,16 +84,38 @@ export async function POST(req: NextRequest) {
     const assistantMessage = completion.choices[0]?.message?.content ||
       'Elnézést, nem tudtam választ generálni. Próbáld újra!';
 
-    return NextResponse.json({ message: assistantMessage });
+    console.log('✅ OpenAI response received');
+
+    return NextResponse.json({
+      message: assistantMessage,
+      success: true
+    });
 
   } catch (error: any) {
-    console.error('OpenAI API error:', error);
+    console.error('❌ OpenAI API Error:', {
+      message: error.message,
+      type: error.type,
+      code: error.code
+    });
+
     return NextResponse.json(
       {
-        error: 'Failed to get response from Alex',
-        details: error.message
+        error: 'Failed to get response from OpenAI',
+        details: error.message,
+        type: error.type || 'unknown'
       },
       { status: 500 }
     );
   }
+}
+
+// Health check endpoint
+export async function GET() {
+  const hasApiKey = !!process.env.OPENAI_API_KEY;
+
+  return NextResponse.json({
+    status: hasApiKey ? 'ok' : 'missing_api_key',
+    hasApiKey: hasApiKey,
+    timestamp: new Date().toISOString()
+  });
 }
