@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 // System prompt for Alex
 const SYSTEM_PROMPT = `Te Alex vagy, a Welisse barátságos AI asszisztense - egy modern webfejlesztő és AI integrációs cég.
 
@@ -47,6 +43,16 @@ Válaszolj mindig magyarul!`;
 
 export async function POST(req: NextRequest) {
   try {
+    // Initialize OpenAI client at runtime
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: 'OpenAI API key not configured' },
+        { status: 500 }
+      );
+    }
+
+    const openai = new OpenAI({ apiKey });
     const { messages } = await req.json();
 
     const completion = await openai.chat.completions.create({
