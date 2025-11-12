@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
     console.log('📤 Calling OpenAI with', messages.length, 'messages');
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4-turbo-preview',
+      model: 'gpt-3.5-turbo', // Changed from gpt-4-turbo-preview to gpt-3.5-turbo for better compatibility
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages
