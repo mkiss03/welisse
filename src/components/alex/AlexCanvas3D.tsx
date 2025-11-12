@@ -68,9 +68,13 @@ export default function AlexCanvas3D({ animation, isSpeaking }: AlexCanvas3DProp
         </Suspense>
       </Canvas>
 
-      {/* Loading Overlay */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20">
-        <div className="text-sm text-white/50">Loading 3D Alex...</div>
+      {/* Info Badge */}
+      <div className="pointer-events-none absolute bottom-16 left-4 right-4 flex items-center justify-center">
+        <div className="rounded-lg border border-white/20 bg-black/40 px-4 py-2 text-center backdrop-blur-md">
+          <p className="text-xs text-white/70">
+            3D Placeholder • Avatar models coming soon
+          </p>
+        </div>
       </div>
 
       {/* Status Badge */}
