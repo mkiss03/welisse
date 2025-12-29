@@ -19,13 +19,13 @@ Szereped:
 Szolgáltatások amiket megbeszélhetsz:
 
 1. **Webfejlesztés**: Modern React/Next.js weboldalak, e-commerce, PWA-k, SEO optimalizálás
-   - Árazás: 300k-1.5M Ft (komplexitástól függően)
+   - Tájékoztató árak: kb. 250-400k Ft (landing page), 600k-1,5M Ft (komplex webshop/platform)
 
 2. **Egyedi Szoftver**: CRM rendszerek, admin dashboardok, API fejlesztés, workflow automatizálás
-   - Árazás: 800k-2M Ft+
+   - Tájékoztató árak: kb. 600k-2M Ft+ (projekt komplexitásától függően)
 
 3. **AI Integráció**: ChatGPT/Claude chatbotok, email automatizálás, dokumentum feldolgozás, egyedi AI modellek
-   - Árazás: 400k-2M Ft+
+   - Tájékoztató árak: kb. 400k-2M Ft+ (integrációtól függően)
 
 Portfólió kiemelések:
 - HornetGarage (e-commerce + foglalás)
@@ -52,22 +52,22 @@ function generateSmartResponse(userMessage: string): string {
 
   // Website/weboldal queries
   if (message.match(/\b(weboldal|website|webfejlesztés|landing page|honlap)\b/)) {
-    return 'Remek választás! 🚀 Modern React/Next.js alapú weboldalakat készítünk, amik gyorsak, SEO optimalizáltak és mobilbarátok.\n\nÁraink: 300.000 - 1.500.000 Ft között mozognak a komplexitástól függően.\n\nPortfólió példák:\n- HornetGarage (e-commerce + foglalás)\n- Best Homes Espana (ingatlan platform)\n- Vízvár Apartmanok\n\nMesélj a projektedről! Milyen weboldal kellene?';
+    return 'Remek választás! 🚀 Modern React/Next.js alapú weboldalakat készítünk, amik gyorsak, SEO optimalizáltak és mobilbarátok.\n\nTájékoztató áraink:\n• Landing page: kb. 250-400k Ft\n• Komplex webshop/platform: kb. 600k-1,5M Ft\n\nPortfólió példák:\n- HornetGarage (e-commerce + foglalás)\n- Best Homes Espana (ingatlan platform)\n- Vízvár Apartmanok\n\nMesélj a projektedről! Milyen weboldal kellene?';
   }
 
   // Custom software queries
   if (message.match(/\b(szoftver|crm|admin|dashboard|rendszer|alkalmazás)\b/)) {
-    return 'Egyedi szoftver fejlesztés a specialitásunk! 💻\n\nAmit készítünk:\n- CRM rendszerek\n- Admin dashboardok\n- Workflow automatizálás\n- API fejlesztés\n\nÁraink: 800.000 - 2.000.000+ Ft\n\nPéldaként a Mini CRM AI-t készítettük lead kezeléshez.\n\nMilyen funkcionalitásra van szükséged?';
+    return 'Egyedi szoftver fejlesztés a specialitásunk! 💻\n\nAmit készítünk:\n- CRM rendszerek\n- Admin dashboardok\n- Workflow automatizálás\n- API fejlesztés\n\nTájékoztató áraink: kb. 600k-2M+ Ft (projekt komplexitásától függően)\n\nPéldaként a Mini CRM AI-t készítettük lead kezeléshez.\n\nMilyen funkcionalitásra van szükséged?';
   }
 
   // AI integration queries
   if (message.match(/\b(ai|mesterséges intelligencia|chatbot|gpt|claude|automatizálás)\b/)) {
-    return 'AI integráció - ez most a legizgalmasabb terület! 🤖\n\nAmit kínálunk:\n- ChatGPT/Claude chatbotok\n- Email automatizálás AI-jal\n- Dokumentum feldolgozás\n- Egyedi AI modellek\n\nÁraink: 400.000 - 2.000.000+ Ft\n\nPéldául én is egy ilyen AI asszisztens vagyok! 😊\n\nMilyen AI funkciót képzelsz el?';
+    return 'AI integráció - ez most a legizgalmasabb terület! 🤖\n\nAmit kínálunk:\n- ChatGPT/Claude chatbotok\n- Email automatizálás AI-jal\n- Dokumentum feldolgozás\n- Egyedi AI modellek\n\nTájékoztató áraink: kb. 400k-2M+ Ft (integrációtól függően)\n\nPéldául én is egy ilyen AI asszisztens vagyok! 😊\n\nMilyen AI funkciót képzelsz el?';
   }
 
   // Pricing queries
   if (message.match(/\b(ár|árak|költség|mennyibe|price|díj)\b/)) {
-    return 'Az áraink átláthatóak és versenyképesek! 💰\n\n📊 Szolgáltatásaink:\n\n🌐 Webfejlesztés: 300k - 1.5M Ft\n💼 Egyedi Szoftver: 800k - 2M+ Ft\n🤖 AI Integráció: 400k - 2M+ Ft\n\nA pontos ár a projekt komplexitásától és követelményeitől függ.\n\nSzívesen készítek részletes ajánlatot! Add meg az email címed, és a csapatunk 24 órán belül jelentkezik. 📧';
+    return 'Tájékoztató áraink átláthatóak és versenyképesek! 💰\n\n📊 Szolgáltatásaink:\n\n🌐 Webfejlesztés:\n  • Landing page: kb. 250-400k Ft\n  • Webshop/Platform: kb. 600k-1,5M Ft\n\n💼 Egyedi Szoftver: kb. 600k-2M+ Ft\n🤖 AI Integráció: kb. 400k-2M+ Ft\n\n*Az árak tájékoztató jellegűek és a projekt komplexitásától függnek.\n\nSzívesen készítek részletes ajánlatot! Add meg az email címed, és a csapatunk 24 órán belül jelentkezik. 📧';
   }
 
   // Portfolio queries
