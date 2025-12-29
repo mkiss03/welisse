@@ -203,32 +203,39 @@ export default function Portfolio() {
                         </div>
                       )}
 
-                      {/* CTAs */}
-                      <div className="flex flex-wrap gap-4">
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group/btn inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-medium text-white transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-lg"
-                          >
-                            <ExternalLink className="h-4 w-4" />
-                            Weboldal Megtekintése
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                          </a>
-                        )}
-                        {project.demoUrl && (
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group/btn inline-flex items-center gap-2 rounded-full border-2 border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition-all hover:border-cyan-500/50 hover:bg-white/10"
-                          >
-                            <Play className="h-4 w-4" />
-                            Demó Kipróbálása
-                          </a>
-                        )}
-                      </div>
+                      {/* Status Badge or CTAs */}
+                      {(project as any).status ? (
+                        <div className="inline-flex items-center gap-2 rounded-full border-2 border-orange-500/50 bg-orange-500/10 px-6 py-3 font-medium text-orange-400">
+                          <div className="h-2 w-2 animate-pulse rounded-full bg-orange-400" />
+                          {(project as any).status}
+                        </div>
+                      ) : (
+                        <div className="flex flex-wrap gap-4">
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/btn inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-medium text-white transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-lg"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                              Weboldal Megtekintése
+                              <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                            </a>
+                          )}
+                          {project.demoUrl && project.isLiveDemo && (
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/btn inline-flex items-center gap-2 rounded-full border-2 border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition-all hover:border-cyan-500/50 hover:bg-white/10"
+                            >
+                              <Play className="h-4 w-4" />
+                              Demó Kipróbálása
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </motion.div>
                   </div>
                 </div>

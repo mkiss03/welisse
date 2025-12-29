@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, Phone, Clock } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Clock } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -126,7 +126,7 @@ export default function Footer() {
 
         {/* Contact Info Bar */}
         <div className="mb-8 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600">
                 <Mail className="h-5 w-5 text-white" />
@@ -143,21 +143,6 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-600 to-blue-600">
-                <Phone className="h-5 w-5 text-white" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs text-gray-500">Telefon</p>
-                <a
-                  href="tel:+36XXXXXXXXX"
-                  className="text-sm font-medium text-white hover:text-cyan-400"
-                >
-                  +36 XX XXX XXXX
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 sm:col-span-2 lg:col-span-1">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-600 to-red-600">
                 <Clock className="h-5 w-5 text-white" />
               </div>
@@ -175,7 +160,7 @@ export default function Footer() {
             © {currentYear} Welisse. Minden jog fenntartva.
           </p>
           <p className="text-sm text-gray-500">
-            <span className="text-red-500">♥</span>-tal készült Budapesten
+            <span className="text-red-500">♥</span>-tal készült Kaposvárott
           </p>
         </div>
       </div>

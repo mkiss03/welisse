@@ -102,8 +102,9 @@ export const PROJECTS = [
       "AI válaszgenerálás",
       "LocalStorage (backend nélkül)",
     ],
+    status: "Fejlesztés alatt",
     demoUrl: "/crm/crm.html",
-    isLiveDemo: true,
+    isLiveDemo: false,
     featured: true,
   },
   {
@@ -120,8 +121,9 @@ export const PROJECTS = [
       "Email & Calendar integration",
       "Mock vagy valós OpenAI",
     ],
+    status: "Fejlesztés alatt",
     demoUrl: "/flow-orchestrator/flow-orchestrator.html",
-    isLiveDemo: true,
+    isLiveDemo: false,
     featured: false,
   },
   {
@@ -284,7 +286,7 @@ export const PRICING_TIERS = [
   {
     id: "starter",
     name: "Starter",
-    price: "300.000 Ft-tól",
+    price: "kb. 250-400k Ft",
     description: "Kisvállalkozásoknak, freelancereknek",
     features: [
       "Landing page / bemutatkozó oldal",
@@ -301,7 +303,7 @@ export const PRICING_TIERS = [
   {
     id: "professional",
     name: "Professional",
-    price: "800.000 Ft-tól",
+    price: "kb. 600k-1,5M Ft",
     description: "Növekvő cégeknek, online boltoknak",
     features: [
       "Minden a Starter-ből +",
